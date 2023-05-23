@@ -28,7 +28,7 @@
       </p>
       <div class="details">
         <p><span>10</span> tags are remaining</p>
-        <button>Remove All</button>
+        <button id="remove">Remove All</button>
       </div>
     </div>
     <div class="wrapper">
@@ -47,7 +47,7 @@
       </p>
       <div class="details">
         <p><span>10</span> tags are remaining</p>
-        <button>Remove All</button>
+        <button id="remove2">Remove All</button>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -61,8 +61,14 @@
     <script src="../lib/tags-small.min.js"></script>
 
     <script>
-      const tags = new TagsSmall('#ul', '#tel', '#erroFormato', 14);
-      const tags2 = new TagsSmall('#ul2', '#tel2', '#erroFormato2', 14);
+      const tags = new TagsSmall('#ul', '#tel', '#erroFormato', '#remove', 14);
+      const tags2 = new TagsSmall(
+        '#ul2',
+        '#tel2',
+        '#erroFormato2',
+        '#remove2',
+        14
+      );
 
       function remove(arg1, arg2) {
         tags.remove(arg1, arg2);

@@ -1,10 +1,10 @@
 export default class TagsSmall {
-  constructor(arg1, arg2, arg3, arg4) {
+  constructor(arg1, arg2, arg3, arg4, arg5) {
     this.ul = document.querySelector(arg1);
     this.input = document.querySelector(arg2);
     this.erroFormato = document.querySelector(arg3);
-    this.removeBtn = document.querySelector('.details button');
-    this.tagsLength = arg4;
+    this.removeBtn = document.querySelector(arg4);
+    this.tagsLength = arg5;
 
     this.tags = [];
 
