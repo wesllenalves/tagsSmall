@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Tags Input Box | Wesllen Alves de Sousa</title>
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Unicons CDN Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <img src="tag.svg" alt="icon" />
+        <h2>Tags</h2>
+      </div>
+      <div class="content-tags">
+        <p>Pressione enter após cada tag</p>
+        <ul id="ul">
+          <input type="text" spellcheck="false" id="tel" />
+        </ul>
+      </div>
+      <p style="font-size: 12px; color: red; display: none" id="erroFormato">
+        Telefone com erro. Formato suportado: (00) 0000-0000
+      </p>
+      <div class="details">
+        <p><span>10</span> tags are remaining</p>
+        <button>Remove All</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="title">
+        <img src="tag.svg" alt="icon" />
+        <h2>Tags</h2>
+      </div>
+      <div class="content-tags">
+        <p>Pressione enter após cada tag</p>
+        <ul id="ul2">
+          <input type="text" spellcheck="false" id="tel2" />
+        </ul>
+      </div>
+      <p style="font-size: 12px; color: red; display: none" id="erroFormato2">
+        Telefone com erro. Formato suportado: (00) 0000-0000
+      </p>
+      <div class="details">
+        <p><span>10</span> tags are remaining</p>
+        <button>Remove All</button>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script>
+      $('#tel').mask('(00) 0000-0000');
+      $('#tel2').mask('(00) 0000-0000');
+    </script>
+
+    <script src="../lib/tags-small.min.js"></script>
+
+    <script>
+      const tags = new TagsSmall('#ul', '#tel', '#erroFormato', 14);
+      const tags2 = new TagsSmall('#ul2', '#tel2', '#erroFormato2', 14);
+
+      function remove(arg1, arg2) {
+        tags.remove(arg1, arg2);
+        tags2.remove(arg1, arg2);
+      }
+    </script>
+  </body>
+</html>
