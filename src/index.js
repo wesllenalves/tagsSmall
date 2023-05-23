@@ -57,4 +57,8 @@ export default class TagsSmall {
       e.target.value = '';
     }
   }
+
+  getValues() {
+    return this.tags;
+  }
 }
