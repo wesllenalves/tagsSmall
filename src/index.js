@@ -45,9 +45,9 @@ export default class TagsSmall {
       let tag = e.target.value.replace(/\s+/g, ' ');
       if (tag.length > 1 && !this.tags.includes(tag)) {
         if (tag.length < this.tagsLength) {
-          erroFormato.style.display = 'block';
+          this.erroFormato.style.display = 'block';
         } else {
-          erroFormato.style.display = 'none';
+          this.erroFormato.style.display = 'none';
           tag.split(',').forEach((tag) => {
             this.tags.push(tag);
             this.createTag();
