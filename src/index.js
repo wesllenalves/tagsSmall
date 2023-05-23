@@ -18,7 +18,7 @@ export default class TagsSmall {
     });
 
     this.removeBtn.addEventListener('click', () => {
-      tags.length = 0;
+      this.tags.length = 0;
       this.ul.querySelectorAll('li').forEach((li) => li.remove());
     });
   }
