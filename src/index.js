@@ -61,4 +61,19 @@ export default class TagsSmall {
   getValues() {
     return this.tags;
   }
+
+  addValues(item) {
+    let tag = item.replace(/\s+/g, ' ');
+    if (tag.length > 1 && !this.tags.includes(tag)) {
+      if (tag.length < this.tagsLength) {
+        this.erroFormato.style.display = 'block';
+      } else {
+        this.erroFormato.style.display = 'none';
+        tag.split(',').forEach((tag) => {
+          this.tags.push(tag);
+          this.createTag();
+        });
+      }
+    }
+  }
 }

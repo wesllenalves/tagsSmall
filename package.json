@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack --progress --watch",
     "start": "webpack serve"
   },
   "devDependencies": {
@@ -29,5 +29,8 @@
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }

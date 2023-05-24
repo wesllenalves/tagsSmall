@@ -1,7 +1,8 @@
+require('dotenv').config();
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV,
   entry: './index.js',
   output: {
     path: path.join(__dirname, 'lib'),
