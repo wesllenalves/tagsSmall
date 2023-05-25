@@ -4,13 +4,11 @@ export default class TagsSmall {
   private classeRemove: string = '.glyphicon-remove';
   private mensageDefault: String =
     'Telefone com erro. Formato suportado: (00) 0000-0000';
-  private tags: Array<string> = ['wesllen', 'alves'];
+  private tags: Array<string> = [];
   private lengthTags: number = 14;
-  private removeBtn: NodeListOf<Element>;
 
   constructor(seletor: string, mesage?: string) {
     this.input = document.querySelector(seletor);
-    this.removeBtn = document.querySelectorAll('.remove-all');
 
     this.mensage = mesage;
     this.init();
