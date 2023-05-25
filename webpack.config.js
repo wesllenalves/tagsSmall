@@ -4,22 +4,22 @@ const path = require('path');
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: './index.js',
-  output: {
-    path: path.join(__dirname, 'lib'),
-    filename: 'tags-small.min.js',
-    libraryTarget: 'umd',
-    library: 'TagsSmall',
-  },
   module: {
     rules: [
       {
-        loader: 'babel-loader',
-        test: /\.js$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
     ],
   },
-  devServer: {
-    contentBase: [path.join(__dirname, 'example'), path.join(__dirname, 'lib')],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'tags-small.min.js',
+    libraryTarget: 'umd',
+    library: 'TagsSmall',
   },
 };

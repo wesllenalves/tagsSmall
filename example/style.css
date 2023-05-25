@@ -60,6 +60,7 @@ body{
   border: 1px solid #e3e1e1;
 }
 .content-tags ul li i{
+  display: flex;
   height: 20px;
   width: 20px;
   color: #808080;

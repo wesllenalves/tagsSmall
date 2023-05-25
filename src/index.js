@@ -44,7 +44,7 @@ export default class TagsSmall {
     if (e.key == 'Enter') {
       let tag = e.target.value.replace(/\s+/g, ' ');
       if (tag.length > 1 && !this.tags.includes(tag)) {
-        if (tag.length < this.tagsLength) {
+        if (tag.length < this.tags.length) {
           this.erroFormato.style.display = 'block';
         } else {
           this.erroFormato.style.display = 'none';
@@ -62,7 +62,7 @@ export default class TagsSmall {
     return this.tags;
   }
 
-  addValues(item) {
+  addValues(item): void {
     let tag = item.replace(/\s+/g, ' ');
     if (tag.length > 1 && !this.tags.includes(tag)) {
       if (tag.length < this.tagsLength) {
