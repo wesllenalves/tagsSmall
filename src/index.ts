@@ -8,30 +8,35 @@ export default class TagsSmall {
   private lengthTags: number = 14;
 
   constructor(seletor: string, mesage?: string) {
+    if (seletor === null || seletor === undefined) {
+      throw new Error('Um seletor deve ser fornecido para o construtor!');
+    }
     this.input = document.querySelector(seletor);
-
     this.mensage = mesage;
     this.init();
-    this.createTag();
-    this.createElementErro();
   }
 
   public init(): void {
-    this.input.addEventListener('keyup', (e) => {
-      this.addTag(e);
-    });
+    if (this.input != null || this.input != undefined) {
+      this.createTag();
+      this.createElementErro();
 
-    this.input.parentElement.addEventListener('click', (e) => {
-      this.removerTag(e);
-    });
-
-    this.input.parentElement.parentElement.parentElement
-      .querySelector('.details')
-      .addEventListener('click', (e: any) => {
-        if (e.target.matches('.remove-all')) {
-          this.removerAllTags();
-        }
+      this.input.addEventListener('keyup', (e) => {
+        this.addTag(e);
       });
+
+      this.input.parentElement.addEventListener('click', (e) => {
+        this.removerTag(e);
+      });
+
+      this.input.parentElement.parentElement.parentElement
+        .querySelector('.details')
+        .addEventListener('click', (e: any) => {
+          if (e.target.matches('.remove-all')) {
+            this.removerAllTags();
+          }
+        });
+    }
   }
 
   public createElementErro(): void {
