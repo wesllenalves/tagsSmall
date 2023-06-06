@@ -93,8 +93,8 @@ export default class TagsSmall {
     ul.querySelectorAll('li').forEach((li) => li.remove());
   }
 
-  public getValues(): Array<string> {
-    return this.tags;
+  public getValues(): string {
+    return this.tags.join(';');
   }
 
   public addValues(item: string): void {
@@ -105,7 +105,7 @@ export default class TagsSmall {
         erroFormato.style.display = 'block';
       } else {
         erroFormato.style.display = 'none';
-        tag.split(',').forEach((tag: string) => {
+        tag.split(tag.includes(',') ? ',' : ';').forEach((tag: string) => {
           this.tags.push(tag);
           this.createTag();
         });
